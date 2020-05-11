@@ -9,8 +9,8 @@ class User(db.Model):
 
 
 
-class Posts(db.model):
+class Posts(db.Model):
     post_id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, foreign_key=True)
+    user_id = db.Column(db.Integer)
     text_content = db.Column(db.String(150))
     
