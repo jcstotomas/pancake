@@ -14,3 +14,17 @@ def create_post():
     db.session.add(new_post)
     db.session.commit()
     return "post created"
+
+
+@bp.route('posts', methods=['DELETE'])
+def delete_post():
+    pass
+
+@bp.route('posts', methods=['UPDATE'])
+def update_post():
+    pass
+
+
+@bp.route('posts', methods=['GET'])
+def get_post():
+    pass
