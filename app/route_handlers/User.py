@@ -8,3 +8,5 @@ def create_user():
     db.session.add(new_user)
     db.session.commit()
     return "created"
+
+
