@@ -14,7 +14,7 @@ def create_user():
 @bp.route("users/<username>", methods=["GET"])
 def get_user(username):
     user = db.session.query(User).filter_by(username=username).first()
-    print(user)
+    print(user.posts)
     return str(user)
 
 
