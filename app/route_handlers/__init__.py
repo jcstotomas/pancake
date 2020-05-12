@@ -6,4 +6,4 @@ bp = Blueprint('route_handlers',__name__)
 def api_status():
     return jsonify({"status": "success"})
 
-import app.route_handlers.User
+import app.route_handlers.User, app.route_handlers.Post

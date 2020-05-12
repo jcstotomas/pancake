@@ -8,12 +8,14 @@ class User(db.Model):
     email = db.Column(db.String(50), unique=True)
     name = db.Column(db.String(50))
     ssn = db.Column(db.String(10))
+    posts = db.relationship('Post')
 
 
 class Post(db.Model):
     post_id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id') )
     text_content = db.Column(db.String(150))
+    
     
 
 

@@ -7,10 +7,10 @@ from flask import request, jsonify
 
 # define the create post route 
 
-@bp.route('posts', methods=["POST"])
+@bp.route('posts', methods=["POST", "GET"])
 def create_post():
     body = request.get_json()
-    new_post = Post()
+    new_post = Post(user_id=1)
     db.session.add(new_post)
     db.session.commit()
     return "post created"
