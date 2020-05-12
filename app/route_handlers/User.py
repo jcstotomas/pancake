@@ -18,4 +18,13 @@ def get_user(username):
     return str(user)
 
 
+@bp.route("users/<username>", methods=["DELETE"])
+def delete_user(username):
+    pass
+
+@bp.route("users/<username>", methods=["PUT"])
+def update_user(username):
+    pass
+
+
 
