@@ -4,9 +4,10 @@ db = app.db
 class User(db.Model):
     id = db.Column(db.Integer,
                    primary_key=True)
+    username = db.Column(db.String(15), unique=True)
+    email = db.Column(db.String(50), unique=True)
     name = db.Column(db.String(50))
     ssn = db.Column(db.String(10))
-
 
 
 class Post(db.Model):
