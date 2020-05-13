@@ -18,9 +18,13 @@ def get_user(username):
     return str(user)
 
 
-@bp.route("users/<username>", methods=["DELETE"])
+@bp.route("users/<username>/delete", methods=["GET"])
 def delete_user(username):
-    pass
+    user = db.session.query(User).filter_by(username=username).first()
+    db.session.delete(user)
+    db.session.commit()
+    return "deleted user"
+
 
 @bp.route("users/<username>", methods=["PUT"])
 def update_user(username):

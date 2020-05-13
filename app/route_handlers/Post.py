@@ -10,14 +10,15 @@ from flask import request, jsonify
 @bp.route('posts', methods=["POST", "GET"])
 def create_post():
     body = request.get_json()
-    new_post = Post(user_id=1)
+    new_post = Post(user_id=5)
     db.session.add(new_post)
     db.session.commit()
     return "post created"
 
 
-@bp.route('posts', methods=['DELETE'])
+@bp.route('posts/delete', methods=['DELETE'])
 def delete_post():
+    #
     pass
 
 @bp.route('posts', methods=['UPDATE'])
