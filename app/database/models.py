@@ -8,7 +8,7 @@ class User(db.Model):
     email = db.Column(db.String(50), unique=True)
     name = db.Column(db.String(50))
     ssn = db.Column(db.String(10))
-    posts = db.relationship('Post')
+    posts = db.relationship('Post', cascade="all, delete, delete-orphan")
 
 
 class Post(db.Model):
