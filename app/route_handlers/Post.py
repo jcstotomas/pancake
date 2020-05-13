@@ -16,10 +16,12 @@ def create_post():
     return "post created"
 
 
-@bp.route('posts/delete', methods=['DELETE'])
-def delete_post():
-    #
-    pass
+@bp.route('posts/<id>', methods=['GET'])
+def delete_post(id):
+    post = db.session.query(Post).filter_by(post_id=id).first()
+    db.session.delete(post)
+    db.session.commit()
+    return "post deleted"
 
 @bp.route('posts', methods=['UPDATE'])
 def update_post():

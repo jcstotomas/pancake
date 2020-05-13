@@ -28,7 +28,9 @@ def delete_user(username):
 
 @bp.route("users/<username>", methods=["PUT"])
 def update_user(username):
-    pass
+    user = db.session.query(User).filter_by(username=username).first()
+    db.session.update(user)
+    return "updated user "
 
 
 
