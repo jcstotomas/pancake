@@ -14,8 +14,15 @@ class User(db.Model):
 class Post(db.Model):
     post_id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id') )
-    text_content = db.Column(db.String(150))
+    text_content = db.Column(db.String(150), default=None)
     
+
+    def return_info(self):
+        return {
+            "post_id": self.post_id,
+            "user_id": self.user_id,
+            "text_content": self.text_content
+        }
     
 
 
